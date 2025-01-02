@@ -1,0 +1,26 @@
+{% extends "event/layout.html" %}
+
+{% block body %}
+    <div id="test">
+        {% if message %}
+            {{ message }}
+        {% endif %}
+        <h2>Login</h2>
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            <div>
+                <input autofocus type="text" name="username" placeholder="Username">
+            </div>
+            <div>
+                <input name="password" placeholder="Password" type="password">
+            </div>
+            <div>
+                <input type="submit" value="login">
+            </div>
+            <div>
+                <span>don't have an account? </span>
+                <a href="register">register</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "event/layout.html" %}
+
+{% block body %}
+
+    {% for event in events %}
+        <a class="calendar-href" href="{% url 'event' event.id %}">
+            <div class="calendar-default" >
+                <h3>{{ event.title }}</h3>
+                <p>{{ event.category }}</p>
+                <p>Start Date: {{ event.start_date }}</p>
+                <p>Start Time: {{ event.start_time }}</p>
+                <p>Deadline: {{ event.RSVP_deadline }}</p>
+                <hr>
+            </div>
+        </a>
+    {% endfor %}
+
+{% endblock %}
