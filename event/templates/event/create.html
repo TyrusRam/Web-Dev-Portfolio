@@ -1,0 +1,30 @@
+{% extends "event/layout.html" %}
+
+{% block body %}
+    <div id="create-container">
+        <form action=" {% url 'create' %}" method="POST">
+            {% csrf_token %}
+            <textarea class="create-fields" placeholder="title" name="title" rows="1" cols="15"></textarea><br>
+            <textarea class="create-fields" placeholder="description" name="description" rows="4" cols="20"></textarea><br>
+            <select class="create-fields" id="category" name="category_field">
+                <option value="" disabled selected>Select category</option>
+                {% for category, display in categories %}
+                    <option value="{{ category }}">{{ display }}</option>
+                {% endfor %}
+            </select><br>
+            <label for="start_date">Start Date:</label>
+            <input class="create-fields" type="date" name="start_date" placeholder="Start date" required><br>
+            <label for="start_time">Start Time:</label>
+            <input class="create-fields" type="time" name="start_time" placeholder="Start time" required><br>
+            <label for="end_date">End Date:</label>
+            <input class="create-fields" type="date" name="end_date" placeholder="End date" required><br>
+            <label for="end_time">End Time:</label>
+            <input class="create-fields" type="time" name="end_time" placeholder="End time" required><br>
+            <input class="create-fields" type="number" name="capacity" placeholder="Capacity" required><br>
+            <input class="create-fields" type="number" step="0.01" name="ticket_price" placeholder="Ticket price" required><br>
+            <label for="RSVP_deadline">RSVP Deadline:</label>
+            <input class="create-fields" type="datetime-local" name="RSVP_deadline" placeholder="RSVP Deadline" required><br>
+            <input type="submit" value="Create Event">
+        </form>
+    </div>
+{% endblock %}
