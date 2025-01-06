@@ -1,0 +1,26 @@
+{% extends "event/layout.html" %}
+
+{% block body %}
+    <div id="discover-container">
+        <h1>Discover by Category</h1>
+        <form id="category-form" method="post" action="{% url 'discover' %}">
+            {% csrf_token %}
+            <div id="category-list">
+                {% for key, value in categories %}
+                    <div class="category-label" data-category="{{ key }}"> 
+                        {{ value }}
+                    </div>
+                {% endfor %}
+            </div>
+            <input type="hidden" name="category" id="categoryInput">
+        </form>
+    </div>
+
+    <div id="event-container" style="display: none">
+        
+    </div>
+
+    <div id="mobile-event-container" style="display: none">
+        
+    </div>
+{% endblock %}
