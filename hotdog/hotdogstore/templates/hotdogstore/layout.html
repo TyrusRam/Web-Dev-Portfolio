@@ -1,0 +1,245 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="{% static 'style.css' %}">-->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        #heading-section {
+            background-color: #FFC72C;
+            outline: solid black;
+            margin-left: -5px;
+            margin-right: -5px;
+            margin-top: -5px;
+            align-items: center;
+            font-size: 24px;
+            color:black;
+            display: flex;
+            text-decoration: none;
+            font-style: bold;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+        #body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+        #heading-options {
+            justify-content: space-between;
+            display: flex;
+            width: 100%;
+        }
+        #main-logo {
+            margin-top: 10px;
+            margin-left: 5px;
+            margin-bottom: 5px;
+            width: 150px;
+            height: 80px;
+            border-radius: 10px;
+        }
+        #left-side-header {
+            margin-left: 0.3%;
+            display: flex;
+            align-items: center;
+        }
+        #right-side-header {
+            margin-right: 0.9%;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        #right-side-header:hover {
+            cursor: normal;
+        }
+        #left-side-header a, #right-side-header a {
+            text-decoration: none;
+            color:black;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+            margin: 1%;
+        }
+        #left-side-header a:hover, #right-side-header a:hover {
+            text-decoration: none;
+            color:black;
+        }
+        #right-side-header button {
+            width: 130px;
+            height: 50px;
+            font-size: 22px;
+            font-size: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color:red;
+            border-radius: 10px;
+            border: 0px solid red;
+        }
+        #right-side-header button:hover {
+            animation: rainbow 100ms infinite alternate;
+        }
+        @keyframes rainbow {
+            0% {
+                background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            }
+            100% {
+                background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+            }
+        }
+        #right-side-header a:hover, #right-side-header button:hover {
+            cursor: pointer;
+        }
+        #background-container-div {
+            width: auto;
+            height: 100vh;
+            margin-left: -1%;
+            margin-right: -1%;
+        }
+        #main-BG {
+            width: 100%;
+            object-fit: cover;
+        }
+        #ads-special {
+            position: absolute;
+            top: 20%;
+            left: 5%;
+            width: 90%;
+            height: 70%;
+            animation: rainbow-background 1s infinite alternate, rainbow-border 1s infinite alternate;
+            background-color: white;
+            color: black;
+            font-size:20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            z-index: 1;
+            justify-content: space-between;
+            border: 10px solid;
+            border-color: white;
+            overflow: hidden;
+            align-items: stretch;
+            flex-wrap: wrap;
+        }
+        #ad-space-1, #ad-space-2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1;
+            height: 100%;
+        }
+        @keyframes rainbow-border {
+            0% {
+                border-color: red;
+            }
+            14% {
+                border-color: orange;
+            }
+            28% {
+                border-color: yellow;
+            }
+            42% {
+                border-color: green;
+            }
+            57% {
+                border-color: blue;
+            }
+            71% {
+                border-color: indigo;
+            }
+            85% {
+                border-color: violet;
+            }
+            100% {
+                border-color: red;
+            }
+        }
+        @keyframes rainbow-background {
+            0% {
+                background-color: red;
+            }
+            14% {
+                background-color: orange;
+            }
+            28% {
+                background-color: yellow;
+            }
+            42% {
+                background-color: green;
+            }
+            57% {
+                background-color: blue;
+            }
+            71% {
+                background-color: indigo;
+            }
+            85% {
+                background-color: violet;
+            }
+            100% {
+                background-color: red;
+            }
+        }
+        #ad1, #ad2, #ad3, #ad4, #ad5, #ad6 {
+            width: 100%;
+            height: 33%;
+            box-sizing: border-box;
+            border: 2px solid;
+            border-color: white;
+            animation: rainbow-border 1s infinite alternate, rainbow-background 1s infinite alternate;
+        }
+        #daily-special {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 2;
+            border: 2px solid;
+            border-color: white;
+            animation: rainbow-border 1s infinite alternate;
+        }
+        #daily-special-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 2;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #special-descr {
+            justify-content: center;
+            align-items: center;
+            padding: -10px;
+            margin: 1%;
+            background-color: white;
+            animation: rainbow-background 1s infinite alternate;
+        }
+    </style>
+</head>
+<body>
+    <header id="heading-section">
+        <div id="image-container-div">
+            <img id="main-logo" src="{% static 'hotdogstore/images/HotDogzz.jpg' %}" alt="HotDogzz logo">
+        </div>
+        <nav id="heading-options">
+            <div id="left-side-header">
+                <a href="#">Menu</a>
+            </div>
+            <div id="right-side-header">
+                <a href="#">Login</a>
+                <a href="#">🛒</a>
+                <button type="button" >Order Now</button>
+            </div>
+        </nav>
+    </header> 
+    <main>
+        {% block body %}
+        {% endblock %} 
+    </main>  
+</body>
+</html>

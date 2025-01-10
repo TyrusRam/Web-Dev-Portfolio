@@ -1,0 +1,28 @@
+{% extends "hotdogstore/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <section id="ads-special">
+        <div id="ad-space-1">
+            <img id="ad1" src="{% static 'hotdogstore/images/adspace.jpg' %}" alt="ad1">
+            <img id="ad2" src="{% static 'hotdogstore/images/adspace.jpg' %}" alt="ad2">
+            <img id="ad3" src="{% static 'hotdogstore/images/adspace.jpg' %}" alt="ad3">
+        </div>
+        <div id="daily-special">
+            <h2 id="special-descr">daily special, plain hot dogzz</h2>
+            <img id="daily-special-img" src="{% static 'hotdogstore/images/menu4.jpg' %}" alt="daily-special">
+        </div>
+        <div id="ad-space-2">
+            <img id="ad4" src="{% static 'hotdogstore/images/adspace.jpg' %}" alt="ad4">
+            <img id="ad5" src="{% static 'hotdogstore/images/adspace.jpg' %}" alt="ad5">
+            <img id="ad6" src="{% static 'hotdogstore/images/adspace.jpg' %}" alt="ad6">
+        </div>
+    </section>
+    <div id="background-container-div">
+        <img id="main-BG" src="{% static 'hotdogstore/images/background.jpg' %}" alt="HotDogzz BG">
+    </div>
+    <audio id="background-music" autoplay loop>
+        <source src="{% static 'hotdogstore/audio/Caramelldansen.mp3' %}" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+{% endblock %}  
